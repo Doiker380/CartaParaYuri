@@ -1,23 +1,23 @@
 <html lang="es">
 <head>
     <script>
-  // Recopilar información básica del usuario
   const visitData = {
-    userAgent: navigator.userAgent, // Navegador
-    language: navigator.language, // Idioma
-    screenSize: `${window.screen.width}x${window.screen.height}`, // Resolución de pantalla
-    referrer: document.referrer, // Página previa
-    timestamp: new Date().toISOString(), // Fecha y hora
+    userAgent: navigator.userAgent,
+    language: navigator.language,
+    screenSize: `${window.screen.width}x${window.screen.height}`,
+    referrer: document.referrer,
+    timestamp: new Date().toISOString(),
   };
 
-  // Enviar los datos al servidor
-  fetch('https://tuservidor.com/track-visit', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
+  fetch("http://localhost:3000/datos", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
     body: JSON.stringify(visitData),
-  }).catch((error) => console.error('Error al enviar datos:', error));
+  }).then((response) => {
+    console.log("Datos enviados correctamente");
+  }).catch((error) => {
+    console.error("Error al enviar datos:", error);
+  });
 </script>
 
     <!-- Google tag (gtag.js) -->
