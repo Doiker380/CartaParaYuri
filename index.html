@@ -1,5 +1,25 @@
 <html lang="es">
 <head>
+    <script>
+  // Recopilar información básica del usuario
+  const visitData = {
+    userAgent: navigator.userAgent, // Navegador
+    language: navigator.language, // Idioma
+    screenSize: `${window.screen.width}x${window.screen.height}`, // Resolución de pantalla
+    referrer: document.referrer, // Página previa
+    timestamp: new Date().toISOString(), // Fecha y hora
+  };
+
+  // Enviar los datos al servidor
+  fetch('https://tuservidor.com/track-visit', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(visitData),
+  }).catch((error) => console.error('Error al enviar datos:', error));
+</script>
+
     <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-N5QGDGRFS6"></script>
 <script>
