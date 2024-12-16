@@ -1,25 +1,5 @@
 <html lang="es">
 <head>
-    <script>
-  const visitData = {
-    userAgent: navigator.userAgent,
-    language: navigator.language,
-    screenSize: `${window.screen.width}x${window.screen.height}`,
-    referrer: document.referrer,
-    timestamp: new Date().toISOString(),
-  };
-
-  fetch("http://localhost:3000/datos", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(visitData),
-  }).then((response) => {
-    console.log("Datos enviados correctamente");
-  }).catch((error) => {
-    console.error("Error al enviar datos:", error);
-  });
-</script>
-
     <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-N5QGDGRFS6"></script>
 <script>
