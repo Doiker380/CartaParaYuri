@@ -12,12 +12,12 @@
 
 body {
   display: flex;
-  align-items: flex-end;
   justify-content: center;
-  min-height: 100vh;
-  background-color: var(--dark-color);
-  overflow: hidden;
+  align-items: flex-end;
   perspective: 1000px;
+  overflow-x: hidden;   /* oculta solo lo lateral */
+  overflow-y: auto;     /* permite scroll vertical */
+  min-height: 100vh;    /* deja crecer si el contenido es más alto */
 }
 
 #lyrics {
